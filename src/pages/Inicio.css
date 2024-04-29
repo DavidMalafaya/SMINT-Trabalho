@@ -1,0 +1,35 @@
+ion-button{
+    background-color: limegreen;
+    align-content: center;
+}
+
+.sabermais{
+    background-color: rgb(33, 18, 195);
+    color: white;
+}
+
+h2{
+    text-align: center;
+}
+
+ion-card{
+    margin-top: 20px;
+    background-color: rgb(33, 18, 195);
+    color: rgb(0, 0, 0);
+}
+
+ion-list{
+    background-color: rgb(33, 18, 195);
+    color: white;
+}
+
+ion-item{
+    background-color: rgb(33, 18, 195);
+    color: white;
+}
+
+.titulo{
+    background-color: rgb(33, 18, 195);
+    color: rgb(8, 143, 102);
+    text-align: center;
+}

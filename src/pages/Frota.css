@@ -1,0 +1,107 @@
+ion-title {
+	color: #146cd7;
+    
+}
+ion-content {
+	--background: #000000;
+}
+
+.content-container {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr;
+	width: 100%;
+	height: 100%;
+}
+
+ion-list {
+--ion-item-background: #000000;
+grid-row: 1 / 2;
+grid-column: 1 /2;
+overflow-y: auto;
+}
+
+ion-item {
+--background: #000000;
+width: 100%;
+}
+ion-card {
+margin: 5px 10px;
+width: 100%;
+background-color: #ffffff;
+}
+ion-card .card-content ion-text {
+font-size: 1.5rem;
+font-weight: 600;
+color: #000000;
+}
+ion-card ion-img {
+height: 400px;
+width: 100%;
+object-fit: cover;
+}
+
+.popup-container {
+grid-row: 1 / 2;
+grid-column: 1 /2;
+overflow-y: auto;
+height: 100%;
+width: 100%;
+background-color: #fff;
+z-index: 20;
+}
+
+/* Add styling for the contents of the popup container 👇 */
+.popup-container ion-img {
+height: 500px;
+width: 100%;
+object-fit: cover;
+}
+
+.popup-container h1 {
+color: #146cd7;
+font-size: 1.5rem;
+font-weight: 700;
+padding: 10px;
+}
+
+.popup-container h2 {
+color: #000000;
+font-size: 1.2rem;
+font-weight: 500;
+padding: 10px;
+align-self: start;
+}
+
+.popup-container h3 {
+color: #555;
+font-size: 1.1rem;
+font-weight: 300;
+padding: 20px;
+}
+
+.popup-container h4 {
+color: #000000;
+font-size: 1.1rem;
+font-weight: 600;
+padding: 20px;
+}
+
+.popup-container ion-datetime {
+    --background: rgb(0, 0, 0);
+    --wheel-highlight-background: rgb(0, 0, 0);
+    --wheel-highlight-border-radius: 48px;
+    --wheel-fade-background-rgb: 245, 235, 247;
+padding: 20px;
+}
+
+.popup-container ion-button {
+    background-color: #146cd7;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+ion-select {
+    color: white;
+}
