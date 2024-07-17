@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonList, IonItem, IonLabel, IonButton, IonCol } from '@ionic/react';
+import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonList, IonItem, IonLabel, IonButton, IonCol, IonImg } from '@ionic/react';
 import { useParams, useHistory } from 'react-router';
-import ExploreContainer from '../components/ExploreContainer';
 import './Inicio.css';
 import { Geolocation } from '@capacitor/geolocation';
 
@@ -28,18 +27,21 @@ const Inicio: React.FC = () => {
   }, []);
 
   const findNearestStore = () => {
-    // Implemente a lógica para encontrar a loja mais próxima aqui
-    // Você pode usar a biblioteca de cálculo de distância (por exemplo, fórmula de haversine)
+    console.log('::::::::::Find nearest store:', currentLocation);
   };
+
+  const navigateToLojas = () => {
+    history.push('/lojas');
+  }
 
   const navigateToFrota = () => {
     history.push('/frota'); 
   };
 
   const newCars = [
-    { name: 'Renault Captur'},
-    { name: 'Seat Arona'},
-    { name: 'Kia Stonic'},
+    { name: 'Renault Clio'},
+    { name: 'BMW X5'},
+    { name: 'Lamborghini Huracán'},
   ];
 
     const awards = [
@@ -81,9 +83,9 @@ const Inicio: React.FC = () => {
           </p>
           <ul>
           <li>Não percas a oportunidade e aproveita promoções nos novos veículos</li>
-          <li>Compre com segurança e conforto com a nossa assistência 24h</li>
-          <li>Benefícios especiais para clientes que fizerem compras em nossa loja física</li>
-          <li>Descontos especiais para clientes que fizeram compras anteriores.</li>
+          <li>Alugue com segurança e conforto com a nossa assistência 24h</li>
+          <li>Benefícios especiais para clientes que alugarem em nossa loja física</li>
+          <li>Descontos especiais para clientes que fizeram alugueres anteriores.</li>
           </ul>
           <p>
           <strong>Confira nossa seleção de carros e explore a nossa loja</strong>
@@ -97,10 +99,12 @@ const Inicio: React.FC = () => {
             <IonCardContent>
             <IonItem>
             <IonLabel>Novos Carros</IonLabel>
+
             <IonList>
               {newCars.map((car, index) => (
                 <IonItem key={index}>
                   <IonLabel>{car.name}</IonLabel>
+                  
                 </IonItem>
               ))}
             </IonList>
@@ -109,8 +113,8 @@ const Inicio: React.FC = () => {
             </IonCard>
           <IonCardContent>
           <IonItem>
-            <IonLabel>Prêmios Ganhos</IonLabel>
-            <IonList>
+          <IonLabel>Prêmios Ganhos</IonLabel>
+          <IonList>
               {awards.map((award, index) => (
                 <IonItem key={index}>
                   <IonLabel>{award.name}</IonLabel>
@@ -136,17 +140,16 @@ const Inicio: React.FC = () => {
                   <IonLabel>Longitude: {currentLocation.longitude}</IonLabel>
                 </IonItem>
                 <IonItem>
-                  <IonButton onClick={findNearestStore}>Encontrar Loja Mais Próxima</IonButton>
+                  <IonButton onClick={navigateToLojas}>Encontrar Loja Mais Próxima</IonButton>
                 </IonItem>
               </IonList>
             </IonCardContent>
           </IonCard>
         )}
 
-        <IonButton expand="full" onClick={navigateToFrota}>
+        <IonButton expand="full" onClick={navigateToFrota} routerLink='/Frota'>
           Ver Frota
         </IonButton>
-        <ExploreContainer name={name} />
       </IonContent>
     </IonPage>
   );

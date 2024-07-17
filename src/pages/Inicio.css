@@ -33,3 +33,7 @@ ion-item{
     color: rgb(8, 143, 102);
     text-align: center;
 }
+
+ion-card-content ion-img{
+    width: 25%;
+}
